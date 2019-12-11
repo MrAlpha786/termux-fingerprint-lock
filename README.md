@@ -13,28 +13,33 @@ Note: It's not an app lock. It's only for Termux.
 Just Enter following commands in respective order:
 
 1.
-
 ```bash
-wget https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K
+wget https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup
 ```
 or
-
 ```bash
-curl https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K
+curl https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup > setup
 ```
-
 2.  
 ```bash
 chmod u+x setup
 ```
-
 3.
 ```bash
 bash setup
 ```
-
 or
-
 ```bash
 ./setup
 ```
+
+## Remove Lock
+
+```bash
+bash setup
+```
+or
+```bash
+./setup
+```
+
