@@ -38,9 +38,7 @@ or
 
 ## Remove Lock
 
-***Note: Removing lock will remove all files. To install again you have to follow the above instructions.***
-
-**Make sure you are in the same directory where the setup is saved.**
+*[ ! ]* _Make sure you are in the same directory where the setup is saved._
 
 Enter the command below:
 
@@ -51,4 +49,5 @@ or
 ```bash
 ./setup
 ```
+***Note: Removing lock will remove all files. To install again you have to follow the above instructions.***
 
