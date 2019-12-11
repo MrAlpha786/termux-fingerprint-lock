@@ -6,6 +6,7 @@ C='\033[0;36m'
 B='\033[1;34m'
 G='\033[1;32m'
 Y='\033[1;33m'
+U='\033[3A'
 FILE=/data/data/com.termux/files/usr/bin/login
 
 clear
@@ -20,12 +21,24 @@ echo
 grep -q "termux-fingerprint" $FILE; 
 
 if [ $? -eq 0 ]; then
-echo -ne $Y" [*] Removing Lock......................\r"
+echo -e $Y" [*] Removing Lock......................\r"
+echo
+sleep 1
+echo -e $G" [!] Authentication Required\r $U"
+sleep 1
+termux-fingerprint | grep -q "AUTH_RESULT_SUCCESS"
+if [ $? -eq 0 ]; then
 sed -i '/termux-fingerprint/d' $FILE
 rm -f setup
 sleep 2
 echo -e $Y" [!] Removing Lock......................$G DONE"
-echo 
+echo
+else
+echo -e $Y" [!] Removing Lock......................$R ERR"
+echo
+echo -e $R" [!] Exiting...                               "
+exit
+fi 
 else
 echo -ne $Y" [*] Installing Dependencies............\r"
 
@@ -34,11 +47,22 @@ apt-get install termux-api -y &> /dev/null
 sleep 2
 echo -e $Y" [!] Installing Dependencies............$G DONE"
 echo
-echo -ne $Y" [*] Setting Lock.......................\r"
+echo -e $Y" [*] Setting Lock......................."
+echo
+sleep 1
+echo -e $G" [!] Authentication Required\r $U"
+sleep 1
+termux-fingerprint | grep -q "AUTH_RESULT_SUCCESS"
+if [ $? -eq 0 ]; then
 sed -i '2 a termux-fingerprint | grep -q "AUTH_RESULT_SUCCESS"; [ $? -ne 0 ] && exit' $FILE
 sleep 2
 echo -e $Y" [!] Setting Lock.......................$G DONE"
 echo
+else
+echo -e $Y" [!] Setting Lock.......................$R ERR"
+echo
+echo -e $R" [!] Exiting...                               "
+exit
+fi
 fi
 
-exit
