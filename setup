@@ -25,12 +25,13 @@ grep -q "termux-fingerprint" $FILE;
 if [ $? -eq 0 ]; then
 echo -ne $Y" [*] Removing Lock......................\r"
 sed -i '/termux-fingerprint/d' $FILE
+rm -f setup
 sleep 2
 echo -e $Y" [!] Removing Lock......................$G DONE"
 echo 
 else
 echo -ne $Y" [*] Setting Lock.......................\r"
-sed -i '2 a termux-fingerprint | grep -q "AUTH_RESULT_SUCCESS"[ $? -ne 0 ] && exit' $FILE
+sed -i '2 a termux-fingerprint | grep -q "AUTH_RESULT_SUCCESS"; [ $? -ne 0 ] && exit' $FILE
 sleep 2
 echo -e $Y" [!] Setting Lock.......................$G DONE"
 echo
