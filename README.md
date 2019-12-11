@@ -1,6 +1,8 @@
 # TERMUX FINGERPRINT LOCK
 ### Created by [MrAlpha786](https://github.com/MrAlpha786)
-Add Fingerprint Lock to your Termux.
+***Request:*** Please use or modify this with proper credit. Add link to my github in your README.md.
+
+_Add Fingerprint Lock to your Termux._
 
 ***Note: It's not an app lock. It's only for Termux.
       If you don't know what Termux is, You don't need this.***
