@@ -16,17 +16,25 @@ Just Enter following commands in respective order:
 
 ```bash
 wget https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K
-```bash
+```
 or
 
-`curl https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K`
+```bash
+curl https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K
+```
 
 2.  
-`chmod u+x setup`
+```bash
+chmod u+x setup
+```
 
 3.
-`bash setup`
+```bash
+bash setup
+```
 
 or
 
-`./setup`
+```bash
+./setup
+```
