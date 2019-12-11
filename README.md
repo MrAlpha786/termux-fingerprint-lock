@@ -2,8 +2,8 @@
 ### Created by [MrAlpha786](https://github.com/MrAlpha786)
 Add Fingerprint Lock to your Termux.
 
-Note: It's not an app lock. It's only for Termux.
-      If you don't know what Termux is, You don't need this.
+***Note: It's not an app lock. It's only for Termux.
+      If you don't know what Termux is, You don't need this.***
 
 ## Prerequisites
 1. Smartphone with Fingerprint Sensor
@@ -36,7 +36,7 @@ or
 
 ## Remove Lock
 
-Note: Removing lock will remove all files. To install again you have to follow the above instructions.
+***Note: Removing lock will remove all files. To install again you have to follow the above instructions.***
 
 ```bash
 bash setup
