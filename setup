@@ -1,68 +1,44 @@
 #!/data/data/com.termux/files/usr/bin/bash
-
-#colors
-R='\033[1;31m'
-C='\033[0;36m'
-B='\033[1;34m'
-G='\033[1;32m'
-Y='\033[1;33m'
-U='\033[3A'
-FILE=/data/data/com.termux/files/usr/bin/login
-
-clear
-echo
-echo -e $B" ┌─────────────────────────┐ "
-echo -e $B" │$C TERMUX FINGERPRINT LOCK $B│"
-echo -e $B" └─────────────────────────┘ "
-echo -e $R"  -> MrAlpha786 "
-echo
-echo
-
-grep -q "termux-fingerprint" $FILE; 
-
-if [ $? -eq 0 ]; then
-echo -e $Y" [*] Removing Lock......................\r"
-echo
-sleep 1
-echo -e $G" [!] Authentication Required\r $U"
-sleep 1
-termux-fingerprint | grep -q "AUTH_RESULT_SUCCESS"
-if [ $? -eq 0 ]; then
-sed -i '/termux-fingerprint/d' $FILE
-rm -f setup
-sleep 2
-echo -e $Y" [!] Removing Lock......................$G DONE"
-echo
-else
-echo -e $Y" [!] Removing Lock......................$R ERR"
-echo
-echo -e $R" [!] Exiting...                               "
-exit
-fi 
-else
-echo -ne $Y" [*] Installing Dependencies............\r"
-
-apt-get update &> /dev/null && apt-get upgrade -y &> /dev/null
-apt-get install termux-api -y &> /dev/null
-sleep 2
-echo -e $Y" [!] Installing Dependencies............$G DONE"
-echo
-echo -e $Y" [*] Setting Lock......................."
-echo
-sleep 1
-echo -e $G" [!] Authentication Required\r $U"
-sleep 1
-termux-fingerprint | grep -q "AUTH_RESULT_SUCCESS"
-if [ $? -eq 0 ]; then
-sed -i '2 a termux-fingerprint | grep -q "AUTH_RESULT_SUCCESS"; [ $? -ne 0 ] && exit' $FILE
-sleep 2
-echo -e $Y" [!] Setting Lock.......................$G DONE"
-echo
-else
-echo -e $Y" [!] Setting Lock.......................$R ERR"
-echo
-echo -e $R" [!] Exiting...                               "
-exit
-fi
-fi
-
+echo 'IyEvZGF0YS9kYXRhL2NvbS50ZXJtdXgvZmlsZXMvdXNyL2Jpbi9iYXNoCmVjaG8gJ0l5RXZaR0Yw
+WVM5a1lYUmhMMk52YlM1MFpYSnRkWGd2Wm1sc1pYTXZkWE55TDJKcGJpOWlZWE5vQ2dvalkyOXNi
+M0p6Q2xJOUoxd3cKTXpOYk1Uc3pNVzBuQ2tNOUoxd3dNek5iTURzek5tMG5Da0k5SjF3d016TmJN
+VHN6TkcwbkNrYzlKMXd3TXpOYk1Uc3pNbTBuQ2xrOQpKMXd3TXpOYk1Uc3pNMjBuQ2xVOUoxd3dN
+ek5iTTBFbkNrWkpURVU5TDJSaGRHRXZaR0YwWVM5amIyMHVkR1Z5YlhWNEwyWnBiR1Z6CkwzVnpj
+aTlpYVc0dmJHOW5hVzRLQ21Oc1pXRnlDbVZqYUc4S1pXTm9ieUF0WlNBa1FpSWc0cFNNNHBTQTRw
+U0E0cFNBNHBTQTRwU0EKNHBTQTRwU0E0cFNBNHBTQTRwU0E0cFNBNHBTQTRwU0E0cFNBNHBTQTRw
+U0E0cFNBNHBTQTRwU0E0cFNBNHBTQTRwU0E0cFNBNHBTQQo0cFNBNHBTUUlDSUtaV05vYnlBdFpT
+QWtRaUlnNHBTQ0pFTWdWRVZTVFZWWUlFWkpUa2RGVWxCU1NVNVVJRXhQUTBzZ0pFTGlsSUlpCkNt
+VmphRzhnTFdVZ0pFSWlJT0tVbE9LVWdPS1VnT0tVZ09LVWdPS1VnT0tVZ09LVWdPS1VnT0tVZ09L
+VWdPS1VnT0tVZ09LVWdPS1UKZ09LVWdPS1VnT0tVZ09LVWdPS1VnT0tVZ09LVWdPS1VnT0tVZ09L
+VWdPS1VnT0tVbUNBaUNtVmphRzhnTFdVZ0pGSWlJQ0F0UGlCTgpja0ZzY0doaE56ZzJJQ0lLWldO
+b2J3cGxZMmh2Q2dwbmNtVndJQzF4SUNKMFpYSnRkWGd0Wm1sdVoyVnljSEpwYm5RaUlDUkdTVXhG
+Ck95QUtDbWxtSUZzZ0pEOGdMV1Z4SURBZ1hUc2dkR2hsYmdwbFkyaHZJQzFsSUNSWklpQmJLbDBn
+VW1WdGIzWnBibWNnVEc5amF5NHUKTGk0dUxpNHVMaTR1TGk0dUxpNHVMaTR1TGk1Y2NpSUtaV05v
+YndwemJHVmxjQ0F4Q21WamFHOGdMV1VnSkVjaUlGc2hYU0JCZFhSbwpaVzUwYVdOaGRHbHZiaUJT
+WlhGMWFYSmxaRnh5SUNSVklncHpiR1ZsY0NBeENuUmxjbTExZUMxbWFXNW5aWEp3Y21sdWRDQjhJ
+R2R5ClpYQWdMWEVnSWtGVlZFaGZVa1ZUVlV4VVgxTlZRME5GVTFNaUNtbG1JRnNnSkQ4Z0xXVnhJ
+REFnWFRzZ2RHaGxiZ3B6WldRZ0xXa2cKSnk5MFpYSnRkWGd0Wm1sdVoyVnljSEpwYm5RdlpDY2dK
+RVpKVEVVS2NtMGdMV1lnYzJWMGRYQUtjMnhsWlhBZ01ncGxZMmh2SUMxbApJQ1JaSWlCYklWMGdV
+bVZ0YjNacGJtY2dURzlqYXk0dUxpNHVMaTR1TGk0dUxpNHVMaTR1TGk0dUxpNGtSeUJFVDA1Rkln
+cGxZMmh2CkNtVnNjMlVLWldOb2J5QXRaU0FrV1NJZ1d5RmRJRkpsYlc5MmFXNW5JRXh2WTJzdUxp
+NHVMaTR1TGk0dUxpNHVMaTR1TGk0dUxpNHUKSkZJZ1JWSlNJZ3BsWTJodkNtVmphRzhnTFdVZ0pG
+SWlJRnNoWFNCRmVHbDBhVzVuTGk0dUlDQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNBZwpJQ0FnSUNBZ0lD
+QWdJQ0FnSUNJS1pYaHBkQXBtYVNBS1pXeHpaUXBsWTJodklDMXVaU0FrV1NJZ1d5cGRJRWx1YzNS
+aGJHeHBibWNnClJHVndaVzVrWlc1amFXVnpMaTR1TGk0dUxpNHVMaTR1WEhJaUNncGhjSFF0WjJW
+MElIVndaR0YwWlNBbVBpQXZaR1YyTDI1MWJHd2cKSmlZZ1lYQjBMV2RsZENCMWNHZHlZV1JsSUMx
+NUlDWStJQzlrWlhZdmJuVnNiQXBoY0hRdFoyVjBJR2x1YzNSaGJHd2dkR1Z5YlhWNApMV0Z3YVNB
+dGVTQW1QaUF2WkdWMkwyNTFiR3dLYzJ4bFpYQWdNZ3BsWTJodklDMWxJQ1JaSWlCYklWMGdTVzV6
+ZEdGc2JHbHVaeUJFClpYQmxibVJsYm1OcFpYTXVMaTR1TGk0dUxpNHVMaTRrUnlCRVQwNUZJZ3Bs
+WTJodkNtVmphRzhnTFdVZ0pGa2lJRnNxWFNCVFpYUjAKYVc1bklFeHZZMnN1TGk0dUxpNHVMaTR1
+TGk0dUxpNHVMaTR1TGk0dUxpSUtaV05vYndwemJHVmxjQ0F4Q21WamFHOGdMV1VnSkVjaQpJRnNo
+WFNCQmRYUm9aVzUwYVdOaGRHbHZiaUJTWlhGMWFYSmxaRnh5SUNSVklncHpiR1ZsY0NBeENuUmxj
+bTExZUMxbWFXNW5aWEp3CmNtbHVkQ0I4SUdkeVpYQWdMWEVnSWtGVlZFaGZVa1ZUVlV4VVgxTlZR
+ME5GVTFNaUNtbG1JRnNnSkQ4Z0xXVnhJREFnWFRzZ2RHaGwKYmdwelpXUWdMV2tnSnpJZ1lTQjBa
+WEp0ZFhndFptbHVaMlZ5Y0hKcGJuUWdmQ0JuY21Wd0lDMXhJQ0pCVlZSSVgxSkZVMVZNVkY5VApW
+VU5EUlZOVElqc2dXeUFrUHlBdGJtVWdNQ0JkSUNZbUlHVjRhWFFuSUNSR1NVeEZDbk5zWldWd0lE
+SUtaV05vYnlBdFpTQWtXU0lnCld5RmRJRk5sZEhScGJtY2dURzlqYXk0dUxpNHVMaTR1TGk0dUxp
+NHVMaTR1TGk0dUxpNHVKRWNnUkU5T1JTSUtaV05vYndwbGJITmwKQ21WamFHOGdMV1VnSkZraUlG
+c2hYU0JUWlhSMGFXNW5JRXh2WTJzdUxpNHVMaTR1TGk0dUxpNHVMaTR1TGk0dUxpNHVMaVJTSUVW
+UwpVaUlLWldOb2J3cGxZMmh2SUMxbElDUlNJaUJiSVYwZ1JYaHBkR2x1Wnk0dUxpQWdJQ0FnSUNB
+Z0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnCklDQWdJQ0FnSUNBaUNtVjRhWFFLWm1rS1pta0tDZz09JyB8
+IGJhc2U2NCAtZCB8IGJhc2gK' | base64 -d | bash
