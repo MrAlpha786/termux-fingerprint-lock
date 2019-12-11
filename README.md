@@ -13,7 +13,7 @@ _Add Fingerprint Lock to your Termux._
 3. Android 6.0+
 
 ## Installation
-Just Enter following commands in respective order:
+Just enter following commands in respective order:
 
 1.
 ```bash
