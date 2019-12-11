@@ -38,6 +38,10 @@ or
 
 ***Note: Removing lock will remove all files. To install again you have to follow the above instructions.***
 
+**Make sure you are in the same directory where the setup is saved.**
+
+Enter the command below:
+
 ```bash
 bash setup
 ```
