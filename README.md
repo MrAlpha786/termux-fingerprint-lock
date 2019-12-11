@@ -8,3 +8,24 @@ Note: It's not an app lock. It's only for Termux.
 1. Smartphone with Fingerprint Sensor
 2. Termux:API app installed
 3. Android 6.0+
+
+# Installation
+Just Enter following commands in respective order:
+
+1.
+
+wget https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K setup
+
+or
+
+curl https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K setup
+
+2.  
+chmod u+x setup
+
+3.
+bash setup
+
+or
+
+./setup
