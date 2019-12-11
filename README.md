@@ -1,5 +1,7 @@
 # TERMUX FINGERPRINT LOCK
-Add fingerprint lock to your termux
+Add fingerprint lock to your Termux
+Note: It's not an app lock. It's only for Termux.
+      If you don't know what Termux is, You don't need this.
 
 # Prerequisites
 1. Smartphone with Fingerprint Sensor
