@@ -38,7 +38,7 @@ or
 
 ## Remove Lock
 
-*[ ! ]* _Make sure you are in the same directory where the setup is saved._
+**[ ! ]** _Make sure you are in the same directory where the setup is saved._
 
 Enter the command below:
 
