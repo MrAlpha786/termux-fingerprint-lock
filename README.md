@@ -36,6 +36,8 @@ or
 
 ## Remove Lock
 
+Note: Removing lock will remove all files. To install again you have to follow the above instructions.
+
 ```bash
 bash setup
 ```
