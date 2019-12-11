@@ -14,18 +14,18 @@ Just Enter following commands in respective order:
 
 1.
 
-'wget https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K setup'
+`wget https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K setup`
 
 or
 
-'curl https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K setup'
+`curl https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K setup`
 
 2.  
-'chmod u+x setup'
+`chmod u+x setup`
 
 3.
-'bash setup'
+`bash setup`
 
 or
 
-'./setup'
+`./setup`
