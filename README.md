@@ -14,8 +14,9 @@ Just Enter following commands in respective order:
 
 1.
 
-`wget https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K`
-
+```bash
+wget https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K
+```bash
 or
 
 `curl https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup?token=AN43OAM2CBMHVOMZXMLHHK256BK2K`
