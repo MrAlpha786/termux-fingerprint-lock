@@ -1,4 +1,4 @@
 #!/data/data/com.termux/files/usr/bin/bash
 apt-get update && apt-get upgrade -y
 apt-get install curl -y
-curl https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/tmp | base64 -d | bash
+curl https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/tmp | base64 -d | bash $0
