@@ -14,7 +14,7 @@ _Add Fingerprint Lock to your Termux._
 
 ## Installation
 
-Delailed video instruction here: [Termux Fingerprint Link](https://youtu.be/A6EHpyLn3fM)
+Delailed video instruction here: [YOUTUBE](https://youtu.be/A6EHpyLn3fM)
 
 Just enter following commands in respective order:
 
