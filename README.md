@@ -13,6 +13,9 @@ _Add Fingerprint Lock to your Termux._
 3. Android 6.0+
 
 ## Installation
+
+Delailed video instruction here: [Termux Fingerprint Link](https://youtu.be/A6EHpyLn3fM)
+
 Just enter following commands in respective order:
 
 1.
