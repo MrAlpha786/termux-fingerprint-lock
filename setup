@@ -93,7 +93,7 @@ else
         echo -e $Y" [!] Setting Lock.......................$G DONE"
         echo
 
-    #else skip setup. and exi
+    #else skip setup and exit
     else
         echo -e $Y" [!] Setting Lock.......................$R ERR"
         echo
