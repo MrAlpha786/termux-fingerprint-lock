@@ -92,6 +92,7 @@ else
         sleep 2
         echo -e $Y" [!] Setting Lock.......................$G DONE"
         echo
+        echo "                                   "
 
     #else skip setup and exit
     else
