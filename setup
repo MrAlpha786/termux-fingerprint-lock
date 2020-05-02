@@ -60,6 +60,7 @@ if [ $? -eq 0 ]; then
         sleep 2
         echo -e $Y" [!] Removing Lock......................$G DONE"
         echo
+        echo "                                   "
 
     #else exit
     else
