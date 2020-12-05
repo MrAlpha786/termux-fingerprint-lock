@@ -24,7 +24,7 @@ wget https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master
 ```
 or
 ```bash
-curl https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup > setup
+curl -O https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup
 ```
 2.  
 ```bash
