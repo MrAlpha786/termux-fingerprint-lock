@@ -1,4 +1,5 @@
 # TERMUX FINGERPRINT LOCK
+***Disclaimer:*** It's cool to have fingerprint authentication in termux but it's not safe and can easily be bypassed (How?🤫). So, if FBI find your data and a nuclear war start. I won't be held responsible. Use at your own risk.
 ### Created by [MrAlpha786](https://github.com/MrAlpha786)
 ***Request:*** Please use or modify this with proper credit. Add link to my github in your README.md.
 
