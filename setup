@@ -2,33 +2,14 @@
 
 # Author:  MrAlpha786   (github.com/MrAlpha786)
 
-## ! If you stuck on "Authentication Required". Check:
-
-## 1. Both termux and termux-api are downloaded from playstore.
-## (Both apps are free. Do not download from other sites
-## like apkmirror.com) or if you have f-droid then download
-## from there. But remember download both from same source.
-
-## 2. Check your internet connection.
-## try to run following command manually &  run setup again.
-## apt-get update && apt-get upgrade
-## apt-get install termux-api
-
-## 3. If still not working then it could be your device issue.
-## check your android version is 6.0+.
-
-
 #colors and other variables.
 R='\033[1;31m'
 C='\033[0;36m'
 B='\033[1;34m'
 G='\033[1;32m'
 Y='\033[1;33m'
-U='\033[3A'
 N='\033[0m'
 FILE=$(which login)
-
-trap 'echo -en "$N"' 0 1 15 20
 
 #Banner
 clear
@@ -38,51 +19,66 @@ echo -e $B" │$C TERMUX FINGERPRINT LOCK $B│"
 echo -e $B" └─────────────────────────┘ "
 echo -e $R"  -> MrAlpha786 "
 echo
-echo
+sleep 1
+
+trap 'echo -e "$N"' 1 15 20
+
+# Check fingerprint
+function authenticate() {
+  termux-fingerprint | grep -q "AUTH_RESULT_SUCCESS"
+}
+
+# Exit on errors
+function error_exit() {
+  echo -e "$R\n$0: $1$N"
+  exit 1
+}
+
+# Check deprndency
+function dependency() {
+  if ! type -p termux-fingerprint &>/dev/null; then
+    echo -e "$Y[*] Installing Dependencies$B"
+    (apt-get update && apt-get upgrade -y &&apt-get install termux-api -y) || error_exit "NO INTERNET CONNECTION"
+  fi
+
+}
 
 
 #Check if lock already exists.
 if grep -q "termux-fingerprint" $FILE; then
-  echo -e $Y" [*] Removing Lock......................\r\n"
-  echo -e $G" [!] Authentication Required\r $U"
+  echo -e "$Y[*] Removing Lock\n$R[!] Authentication Required"
 
+  sleep 1
   #Authenticate fingerprint, if success delete lock
-  if termux-fingerprint | grep -q "AUTH_RESULT_SUCCESS"; then
+  if authenticate; then
     sed -i '/termux-fingerprint/d' $FILE
-    rm -f $0
+    # rm -f $0
 
-    echo -e $Y" [!] Removing Lock......................$G DONE"
+    echo -e "$G\n[-] Lock Removed$N"
+    exit 0
 
   #else exit
   else
-    echo -e $Y" [!] Removing Lock......................$R ERR\n"
-    echo -e $R" [!] Exiting...                               "
-    exit 1
+    error_exit "Authenticatiin Error"
   fi
 
 #if lock do not exist. set one
 else
-  echo -ne $Y" [*] Installing Dependencies............\r"
 
-  apt-get update &> /dev/null && apt-get upgrade -y &> /dev/null
-  apt-get install termux-api -y &> /dev/null
+  dependency
+  echo -e "$G\n[-] Dependencies Installed\n$Y[*] Setting Lock\n$R[!] Authentication Required"
 
-  echo -e $Y" [!] Installing Dependencies............$G DONE\n"
-  echo -e $Y" [*] Setting Lock.......................\n"
-  echo -e $G" [!] Authentication Required\r $U"
-
+  sleep 1
   #Test if fingerprint working.
-  if termux-fingerprint | grep -q "AUTH_RESULT_SUCCESS"; then
+  if authenticate; then
     sed -i '2 a termux-fingerprint -c Exit | grep -q "AUTH_RESULT_SUCCESS"; [ $? -ne 0 ] && exit' $FILE
 
-    echo -e $Y" [!] Setting Lock.......................$G DONE\n"
-    echo "                                   "
+    echo -e "$G\n[-] Lock Set$N"
+    exit 0
 
   #else skip setup and exit
   else
-    echo -e $Y" [!] Setting Lock.......................$R ERR\n"
-    echo -e $R" [!] Exiting...                               "
-    exit 1
+    error_exit "Authenticatiin Error"
   fi
 fi
 
