@@ -52,7 +52,7 @@ if grep -q "termux-fingerprint" $FILE; then
   #Authenticate fingerprint, if success delete lock
   if authenticate; then
     sed -i '/termux-fingerprint/d' $FILE
-    # rm -f $0
+    rm -f $0
 
     echo -e "$G\n[-] Lock Removed$N"
     exit 0
