@@ -19,25 +19,12 @@ Detailed video instruction here: [YOUTUBE](https://youtu.be/A6EHpyLn3fM)
 
 Just enter following commands in respective order:
 
-1.
 ```bash
-wget https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup
+wget https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup; chmod u+x setup; bash setup
 ```
 or
 ```bash
-curl -O https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup
-```
-2.  
-```bash
-chmod u+x setup
-```
-3.
-```bash
-bash setup
-```
-or
-```bash
-./setup
+curl -O https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup; chmod u+x setup; bash setup
 ```
 
 ## Remove Lock
