@@ -17,7 +17,7 @@ _Add Fingerprint Lock to your Termux._
 
 Detailed video instruction here: [YOUTUBE](https://youtu.be/A6EHpyLn3fM)
 
-Just enter following commands in respective order:
+Just enter following command:
 
 ```bash
 wget https://raw.githubusercontent.com/MrAlpha786/termux-fingerprint-lock/master/setup; chmod u+x setup; bash setup
